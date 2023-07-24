@@ -1,0 +1,9 @@
+/* .bg-aircarft es para acceder a la clase */
+.bg-aircraft{
+    /* background-image es para agregar de fondo de la pagina una imagen y linear gradiente es para oscurecer un poco la imagen, ya con el url lo que hacemos es acceder a esa imagen que queremos de fondo de pagina */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/background.jpg");
+}
+
+
+
+

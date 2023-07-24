@@ -1,0 +1,153 @@
+<!-- EL TIPO DE DOCUMENTO ORIGINAL DE HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- POR DEFECTO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- INCLUIR BOOTSTRAP EN LA PAGINA -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- ENLAZAR CON EL CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- LOGO DE LA PESTAÑA DE LA PAGINA -->
+    <link rel="icon" href="assets/logo.png">
+
+    <!-- TITULO DE LA PAGINA EN LA PESTAÑA -->
+    <title>TRAVELEXP | RUTAS</title>
+</head>
+<body>
+
+    <!-- EL HEADER QUE HEMOS USADO DESDE LA PRIMER PAGINA -->
+    <header>
+        <div class="container-fluid bg-dark">
+            <div class="container">
+                <nav class="navbar navbar-dark border-bottom border-bottom-dark navbar-expand-md">
+                    <div class="container-fluid">
+                        <a href="index.html" class="navbar-brand">
+                            <img src="assets/logo.png" alt="logo" width="50px">
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="clientes.html">Clientes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="rutas.html">Rutas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="compras.html">Compras</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="puntos.html">Puntos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mt-5">
+
+        <h2 class="text-center mb-5">Gestor de Rutas Aereas</h2>
+
+        <section class="row">
+            <div class="col col-md-4">
+                <form action="" class="form-control" id="form-anadir">
+                    <h5 class="text-center mt-2" id="form-title">Añadir Ruta</h5>
+
+                    <!-- UN INPUT EL CUAL DEBE INCLUIR EL NOMBRE DE LA RUTA, OBLIGATORIO -->
+                    <input type="text" class="form-control mt-4" required placeholder="Nombre de la Ruta" id="nombreRuta">
+
+                    <!-- UN INPUT OBLIGATORIO QUE DEBE INCLUIR EL VALOR DE TICKET DE FORMA NUMERICA YA QUE SOLO ACEPTA NUMEROS -->
+                    <input type="number" class="form-control mt-2" required placeholder="Valor del Ticket" id="valorTicket">
+
+                    <!-- UN INPUT DE TYPE TEXT QUE RECIBE LA CIUDAD DE ORIGEN -->
+                    <input type="text" class="form-control mt-2" required placeholder="Cidudad Origen" id="ciudadOrigen">
+                    
+                    <!-- UN INPUT DE TIPO TEXTO QUE RECIBE LA CIUDAD DE DESTINO -->
+                    <input type="text" class="form-control mt-2" required placeholder="Ciudad Destino" id="ciudadDestino">
+
+                    <!-- UN INPUT DE TIPO NUMERICO QUE RECIBE LOS PUNTOS DE FIDELIZACION -->
+                    <input type="number" class="form-control mt-2" required placeholder="Puntos Fidelizacion" id="puntos">
+
+                    <!-- BOTON VERDE DE SUBMIT PARA AÑADIR LA NUEVA RUTA -->
+                    <div class="d-grid gap-2 mt-4">
+                        <button class="btn btn-success" type="submit" id="form-button">Añadir</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col col-md-8">
+
+                <!-- TABLA PARA MOSTRAR LAS RUTAS AÑADIDAS -->
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped text-center">
+
+                        <!-- EL ENCABEZADO DE LA LISTA -->
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre Ruta</th>
+                                <th>Valor Ticket</th>
+                                <th>Ciudad Origen</th>
+                                <th>Ciudad Destino</th>
+                                <th>Puntos Fidelidad</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+
+                        <!-- TBODY ES EL CUERPO DE LA TABLA DONDE SE VA A ALMACENAR TODOS LAS RUTAS -->
+                        <tbody id="tabla-rutas">
+
+                            <!-- TR SON LAS FILAS DE ALMACENAMIENTO QUE CONTIENE LOS DATOS -->
+                            <tr>
+
+                                <!-- TD ES CADA ELEMENTO -->
+                                <td>22555</td>
+                                <td>552000</td>
+                                <td>Bogota D.C. (SKBO)</td>
+                                <td>Medellin (SKMD)</td>
+                                <td>20000</td>
+
+                                <!-- ACA VAMOS A HACER LAS OPCIONES DE EDITAR Y ELIMINAR CON LOS ICONOS DE BOOTSTRAP -->
+                                <td class="d-flex align-items-center justify-content-center">
+
+                                    <!-- EL PRIMER BOTON QUE EN ESTE CASO ES DE EITAR IMPORTADO DESDE BOOTSTRAP -->
+                                    <button class="btn btn-primary me-1">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+
+                                    <!-- EL SEGUNDO BOTON DE ELIMINAR DE BOOTSTRAP -->
+                                    <button class="btn btn-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- SCRIPTS JAVASCRIPT -->
+        <script src="js/rutas.js"></script>
+
+        <!-- BOOTSTRAP SRC -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    
+</body>
+</html>

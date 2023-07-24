@@ -1,0 +1,157 @@
+<!-- INICIAMOS NORMAL LA PAGINA PORQUE ESTA ES UNA NUEVA A LA CUAL EL HIPERVINCULO DE LA PAGINA ANTERIOR NOS DEBE REDIRIGIR -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- LO QUE VIENE POR DEFECTO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PARA IMPORTAR BOOTSTRAP Y ICONOS DE BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- ENLAZAR CON EL CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- PARA CAMBIAR EL LOGO DE LA PESTAÑA DE LA PAGINA -->
+    <link rel="icon" href="assets/logo.png">
+
+    <!-- EL TITULO DE ESTA PAGINA EN LA PESTAÑA DEL NAVEGADOR -->
+    <title>TRAVELEXP | CLIENTES</title>
+
+</head>
+
+<body>
+
+    <!-- ES BASICAMENTE UN COPYPASTE PARA REPLICAR EL CABECERO O BARRA NAVEGADORA DE LA PAGINA -->
+    <header>
+        <!-- CONTAINER FLUID PARA EL RESPONSIVE Y BG DARK PARA DARLE FONDO NEGRO AL DIV -->
+        <div class="container-fluid bg-dark">
+            <div class="container">
+                <nav class="navbar navbar-dark border-bottom border-bottom-dark navbar-expand-md">
+                    <div class="container-fluid">
+                        <a href="index.html" class="navbar-brand">
+                            <img src="assets/logo.png" alt="logo" width="50px">
+                        </a>
+
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <!-- CONTENIDO DE LA BARRA DE NAVEGACION -->
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="clientes.html">Clientes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="rutas.html">Rutas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="compras.html">Compras</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="puntos.html">Puntos</a>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTAINER DENTRO DEL MAIN DE LA PAGINA PARA INCLUIR EL FORMULARIO DE INGRESO DE DATOS PARA AÑADIR NUEVO CLIENTE -->
+    <main class="container mt-5">
+
+    <!-- TITULO DE LA PAGINA (NO ESTA DENTRO DE EL FORMULARIO) -->
+        <h2 class="text-center mb-5">Gestor de Clientes</h2>
+
+
+        <section class="row">
+            <div class="col col-md-4">
+                <form action="" class="form-control" id="form-anadir">
+
+                    <!-- TITULO DEL FORMULARIO (DENTRO DE EL) -->
+                    <h5 class="text-center mt-2" id="form-title">Añadir Cliente</h5>
+
+                    <!--INPUTS QUE SON LOS ESPACIOS DE LLENADO, EN ESTE CASO ESTAMOS PIDIENDO UN NUMERO DE IDENTIFICACION, LE COLOCAMOS UN ID UNICO PARA LUEGO ACCEDER A ESTE DATO Y UN TYPE PARA QUE SOLO PERMITA NUMEROS A LA HORA DE LLENARLO, AGREGAMOS UN MT-4 QUE ES UN MARGIN TOP DE SEPARACION CON EL DE ARRIBA Y REQUIRED PARA QUE SEA OBLIGATORIO O NECESARIO LLENAR ESTE DATO PARA PODER ENVIAR EL FORMULARIO Y PLACEHOLDER ES PARA LO QUE VA A INCLUIR ESTA CASILLA COMO TEXTO-->
+                    <input id="identificacion" type="number" class="form-control mt-4" required placeholder="N° Identificación">
+
+                    <!-- LO MISMO EN ESTE CASO UN INPUT PERO ESTA VEZ DE MARGIN TOP DE 2 Y DE TIPO TEXTO CON ID NOMBRES -->
+                    <input id="nombres" type="text" class="form-control mt-2" required placeholder="Nombres">
+
+                    <!-- UN INPUT PARA LOS APELLIDOS DE TIPO TEXTO -->
+                    <input id="apellidos" type="text" class="form-control mt-2" required placeholder="Apellidos">
+
+                    <!-- INPUT DE ID TELEFONO DE TIPO NUMERICO -->
+                    <input id="telefono" type="number" class="form-control mt-2" required placeholder="Telefono">
+
+                    <!-- INPUT DE ID EMAIL Y DE TIPO EMAIL PARA QUE VALIDE UN @ Y UN .COM, SIN ESTO NO SE PUEDE ENVIAR EL FORMULARIO -->
+                    <input id="email" type="email" class="form-control mt-2" required placeholder="E-Mail">
+
+                    <!-- INPUT DE ID FECHA DE NACIMIENTO Y TIPO DATE PARA QUE ESTE ABRA UN CALENDARIO Y PODER ESCOGER LA FECHA -->
+                    <input id="fechaNacimiento" type="date" class="form-control mt-2" required placeholder="Fecha de Nacimiento">
+
+                    <!-- ESTO ES UN TIPO INPUT PERO QUE PUEDAS SELECCIONAR TU NACIONALIDAD DE ACUERDO A LAS OPCIONES QUE ESTAN ACA, NO SE TE PERMITE ESCRIBIR -->
+                    <select class="form-select mt-2" id="nacionalidad">
+                        <option selected>Elegir...</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Panama">Panama</option>
+                        <option value="Perú">Peru</option>
+                    </select>
+
+                    <!-- CON ESTO AÑADIMOS UN BOTON DE ENVIAR FORMULARIO, EN SU CASO SUCCES QUE VIENE CON ESE COLOR CARACTERISTICO VERDE -->
+                    <div class="d-grid gap-2 mt-4">
+                        <button class="btn btn-success" type="submit" id="form-button">Añadir</button>
+                    </div>
+                </form>
+                <!-- AQUI TERMINA EL FORMULARIO -->
+            </div>
+            <div class="col col-md-8">
+
+                <!-- BUSCAR -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control" placeholder="Buscar Cliente..." id="buscar">
+                </div>
+
+                <!-- TABLA CON CLIENTES -->
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped text-center">
+                        <!-- THEAD ES PARA LA CABECERA DE LA TABLA -->
+                        <thead>
+                            <!-- LA ETIQUETA TR REPRESENTA UNA FILA -->
+                            <tr>
+                                <!-- TH ES PARA EL CONTENIDO DE LA FILA -->
+                                <th>Documento</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Telefono</th>
+                                <th>E-mail</th>
+                                <th>Fecha Nacimiento</th>
+                                <th>Nacionalidad</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <!-- EL TBODY ES EL CUERPO  DE LA TABLA Y AQUI LE ASIGNAMOS UN ID TABLA-CLIENTES QUE ES PARA INCLUIR LOS CLIENTES NUEVOS LO CUAL LO HAREMOS DESDE JAVASCRIPT -->
+                        <tbody id="tabla-clientes"></tbody>
+
+                        <!-- CLIENTES... -->
+
+                    </table>
+                </div>
+            </div>
+        </section>
+        </main>
+
+    <!-- AQUI TERMINA ESTA PAGINA CON UN FORMULARIO Y UNA TABLA PARA MOSTRAR LOS DATOS QUE INGRESEMOS EN ESTE FORM -->
+
+    <!-- SCRIPTS -->
+    <script src="js/cliente.js"></script>
+    
+    <!-- BOOTSTRAP SRC -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+</body>
+</html>
