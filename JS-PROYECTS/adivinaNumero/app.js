@@ -17,17 +17,35 @@
 //     Mostrar un control que permita al jugador volver a empezar el juego.
 // 9.Una vez que el juego se reinicia, asegúrate de que la lógica del juego y la IU (interfaz de usuario) se restablezcan por completo, luego vuelve al paso 1.
 
-document.addEventListener('DOMContentLoaded', principal);
+let randomNumber = Math.floor(Math.random() * 100) + 1;
+const dangertTxt = document.getElementById("danger-txt");
+const successTxt = document.getElementById("success-txt");
+const success = document.getElementById("success");
+const danger = document.getElementById("danger");
 
 function principal() {
-    let randomNumber = Math.floor(Math.random() * 100) + 1;
-    const alertDanger = document.getElementById('danger');
-    const alertSuccess = document.getElementById('success');
-    let number = Number(document.getElementById("number").value);
+  let number = Number(document.getElementById("number").value);
 
+  if (number === randomNumber) {
+    successTxt.textContent = "Felicidades Adivinaste el numero";
+    danger.classList.add("d-none");
+    success.classList.remove("d-none");
 
-    if (number === randomNumber) {
-        alertSuccess.textContent = "Felicidades Adivinaste el numero"
-    }
-    
+    console.log("Felicidades");
+  }
+  if (number < randomNumber) {
+    dangertTxt.textContent = "Estas bajo el numero";
+    danger.classList.remove("d-none");
+
+    console.log("Estas bajo el numero");
+  }
+  if (number > randomNumber) {
+    dangertTxt.textContent = "Estas sobre el numero";
+    danger.classList.remove("d-none");
+    console.log("Estas sobre el numero");
+  }
 }
+const btn = document.getElementById("btn");
+btn.addEventListener("click", principal);
+
+//TODO: hacer la funcionalidad para hacer reinicio del juego y tambien contar el numero de intentos haciendo uso de un arreglo

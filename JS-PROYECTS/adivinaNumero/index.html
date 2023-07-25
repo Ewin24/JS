@@ -19,22 +19,22 @@
         <div class="card m-2">
             <div class="card-body">
                 <h4 class="card-title">JUEGO DE ADIVINA EL NUMERO</h4>
-                <form action="">
-                    <input id="number" type="text">
-                    <button type="submit">Probar numero</button>
-                </form>
+                <input id="number" type="text">
+                <button id="btn">Probar numero</button>
             </div>
         </div>
 
         <br>
-        <div class="alert alert-danger m-2" role="alert">
-            <p id="danger"></p>
+        <div id="danger" class="alert alert-danger m-2 d-none" role="alert">
+            <p id="danger-txt"></p>
         </div>
-        <div class="alert alert-success m-2" role="alert">
-            <p id="success"></p>
+        <div id="success" class="alert alert-success m-2 d-none" role="alert">
+            <p id="success-txt"></p>
         </div>
     </main>
 
+
+    <script src="app.js"></script>
 
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
